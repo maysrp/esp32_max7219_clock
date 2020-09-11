@@ -38,8 +38,10 @@ class clock:
         self.display.show()
 Clock=clock()
 
+oldM=0
 while 1:
     Clock.show_time()
     time.sleep(1)
-    if Clock.m==10:
+    if Clock.m!=oldM:
         Clock.ntp()
+        oldM=Clock.m
