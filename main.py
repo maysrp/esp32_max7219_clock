@@ -15,7 +15,7 @@ class clock:
         if not wlan.isconnected(): 
             wlan.connect('wifiname','password')
     def dp(self):
-        hspi = SPI(1, baudrate=10000000, polarity=0, phase=0)
+        hspi = SPI(1, 10000000, sck=Pin(14), mosi=Pin(13), miso=Pin(12))
         self.display = max7219.Matrix8x8(hspi,Pin(5),4)
     def ntp(self):
         self.net()
