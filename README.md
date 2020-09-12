@@ -4,7 +4,8 @@ ESP32 Max7219 Clock
 你的ESP32首先要刷好了Micropython固件
 
 
-按照下图连线：
+按照下图连线：  
+
 esp32     max7219  
 5v（或者3v3） vcc  
 GND   GND  
