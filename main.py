@@ -13,10 +13,10 @@ class clock:
         wlan = network.WLAN(network.STA_IF) 
         wlan.active(True) 
         if not wlan.isconnected(): 
-            wlan.connect('wifiname','password')
+            wlan.connect('pangxh','a12345678') #第一个为你的wifi名称，后一个为wifi密码，只支持2.4GHZ的wifi
     def dp(self):
-        hspi = SPI(1, 10000000, sck=Pin(14), mosi=Pin(13), miso=Pin(12))
-        self.display = max7219.Matrix8x8(hspi,Pin(5),4)
+        spi = SPI(baudrate=100000, polarity=1, phase=0, mosi=Pin(27),sck=Pin(25), miso=Pin(33))
+        self.display = max7219.Matrix8x8(spi,Pin(26),4)
     def ntp(self):
         self.net()
         ntptime.host="ntp1.aliyun.com"
